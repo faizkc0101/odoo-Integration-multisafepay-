@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="payment_form_multisafepay" name="MultiSafepay Payment Form">
+        <t t-set="redirected" t-value="True"/>
+        <form id="o_payment_form"
+              t-att-action="api_url"
+              method="get"
+              t-att-data-provider="provider_id"
+              t-att-data-payment-method="payment_method_id"
+              t-att-data-flow="flow"
+              t-att-data-api-url="api_url"
+              t-att-data-return-url="return_url"
+              t-att-data-reference="reference"
+              t-att-data-partner-id="partner_id"
+              t-att-data-amount="amount"
+              t-att-data-currency-id="currency_id">
+            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+        </form>
+    </template>
+</odoo>
