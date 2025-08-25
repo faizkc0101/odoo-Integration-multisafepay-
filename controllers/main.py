@@ -14,8 +14,6 @@ class MultiSafepayController(http.Controller):
         redirect_url = transaction.provider_id.multisafepay_create_order(transaction)
         return redirect(redirect_url)
 
-
-
     @http.route('/payment/multisafepay/return', type='http', auth='public')
     def multisafepay_return(self, **kwargs):
         print('multisafepay_return')
