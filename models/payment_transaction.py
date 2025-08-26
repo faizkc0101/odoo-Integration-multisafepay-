@@ -6,7 +6,6 @@ class PaymentTransaction(models.Model):
     def _get_specific_rendering_values(self, processing_values):
         print('1,_get_specific_rendering_values')
         rendering_values = super()._get_specific_rendering_values(processing_values)
-        print(processing_values)
 
         if self.provider_code == 'multisafepay':
             return {
